@@ -1,4 +1,4 @@
-# 编码规范
+# Python编码规范
 
 ### 7.什么是 PEP8?
 > [PEP8官网](https://www.python.org/dev/peps/pep-0008/)
