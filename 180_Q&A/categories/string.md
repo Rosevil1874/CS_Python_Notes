@@ -33,80 +33,118 @@ def first_capitalize(sentence:str) -> str:
 	words = sentence.split(' ')
 	for i in range(len(words)):
 		words[i] = words[i].capitalize()
-	return (' ').join(words)
+	return ' '.join(words)
 
 if __name__ == '__main__':
 	sentence = 'hello world'
 	print(first_capitalize(sentence))
 ```
 
+一行代码版本：
+```python
+def first_capitalize(sentence:str) -> str:
+	return ' '.join(list(map(lambda word: word.capitalize(), sentence.split())))
+```
+
 ###22.如何检测字符串中只含有数字?
+使用isdigit()方法，若字符串string只由数字组成，```string.isdigit()```返回True，否则返回False。
+
 ###23.将字符串"ilovechina"进行反转
-###24.Python 中的字符串格式化方式你知道哪些？
+方法1：使用列表的reverse函数（注意：字符串没有reverse函数）
+```python
+string = list(string)
+string.reverse()
+string = ''.join(string)
+```
+
+方法2：使用切片
+```python
+string[::-1]
+```
+
+方法3：使用reduce累加
+```python
+from functools import reduce
+string = reduce(lambda x, y: y+x, string)
+```
+
+方法4：使用栈模拟栈的先进后出就成功翻转了
+```python
+# 模拟入栈
+stack = list(string)
+result_str = ''
+for x in stack:
+	# 模拟依次出栈，每次将最后的字符放进结果中
+	result_str += stack.pop()
+return result_str
+```
+
+###24.Python中的字符串格式化方式你知道哪些？
+1. % - 格式化：当字符串较长或参数较多时，可读性和可维护性很差。
+```python
+%s：字符
+%d：整数
+%f：浮点数
+%x：十六进制整数
+%r：原始字符串
+```
+2. str.format：字典传参时需要重写参数名，不够优雅。
+```python
+用中括号表示要传入的参数位置，format中的参数按中括号的顺序传入。
+
+"Hello, {}. You are {}.".format(name, age)
+
+支持字典形式传参，format中的参数不用严格按顺序传入。
+
+"Hello, {name}. You are {age}.".format(name=name, age=age)
+```
+
+3. f-string格式，py3.6开始支持，形式和foramt类似，形式更为简洁优雅。{}内支持任意表达式，可在其中进行运算和函数调用，性能也比前两种更优。
+```python
+name = "Eric"
+age = 74
+f"Hello, {name}. You are {age}."
+```python
+
 ###25.有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。
+```python
+去除左边空格：string.lstrip()
+去除右边空格：string.rstrip()
+去除两边空格：string.strip()
+```
+
 ###26.获取字符串”123456“最后的两个字符。
+切片：```string[-2:]```
+
 ###27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
+str.encode()：将Unicode字符串编码成其他编码形式；
+str.decode()：将编码后的字符串解码成未编码的Unicode字符串；
+chardet.detect(str)：检查字符串类型并返回（需要import chardet）。
+
 ###28. (1)s="info：xiaoZhang 33 shandong"，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong'](2) a = "你好 中国 "，去除多余空格只留一个空格。
+(1)正则切分字符串
+1. 题意：去除字母和数字以外的字符；
+2. compile：生成一个正则表达式对象；
+3. \w：匹配包括下划线的任何单词字符。类似但不等价于“[A-Za-z0-9_]”，这里的"单词"字符使用Unicode字符集。\W：匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。
+```python
+import re
+pattern = re.compile(r'\W')
+```
+(2)去除多余空格
+```python
+# 使用去除空格的专用函数：
+a.strip()	# 去除两端空格
+a.rstrip()	# 去除右端空格
+```
+
 ###29. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？
+(1)字符串转换：
+1. 字符串中所有字符转大写：string.upper()
+2. 字符串中所有字符转小写：string.lower()
+3. 字符串中每个单词首字母大写：string.capitalize()
+4. 字符串首个单词的首字母大写：string.title()
 
-
-
-
-### 3.简述 with 方法打开处理文件帮我我们做了什么？
-> [with方法详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonwith/)
-
-• with语句适用于对资源进行访问的场合，无论是否发生异常都会进行必要的清理操作以释放资源，如文件使用后自动关闭，线程中自动进行锁的获取和释放等。
-• with关键字后面跟着的语句会返回一个上下文管理器，上下文管理器在使用```__enter__()```方法进入运行时上下文，操作结束后使用```__exit__()```退出运行时上下文。
-• 读文件：
-![read_file](../images/read_file.png)
-• 写文件：
-![write_file](../images/write_file.png)
-
-
-### 4.列出 Python 中可变数据类型和不可变数据类型，为什么？
-  类别		 | 类型名		| 特点	
------------- | ------------ | ------------
-可变数据类型	 |  list，set， dict	 | 变量名指向的内存地址可以改变，对其修改是修改了当前地址内的对象。对可变数据类型使用“=”进行复制，实际上相当于把两个名字不同的指针指向同一地址处的对象，修改其中一个时另外一个也会跟着改变，消除这种影响需要使用深拷贝。
-不可变数据类型 | 	数值型，str，tuple | 	变量名指向的内存地址不可变，对其“修改”相当于重新赋值，会开辟一个新的内存地址来存放。
-
-### 5.Python 获取当前日期？
-```python
-import datetime
-datetime.datetime.now()
-```
-
-### 6.统计字符串每个单词出现的次数
-```python
-from collections import Counter
-result = dict( Counter（string.split（））)
-
-result = { word：string.split().count( word )  for word in string.split（）}
-```
-
-### 7.用 python 删除文件和用 linux 命令删除文件方法
-```python
-# python方法：
-	import os
-	os.remove（'demo.txt'）
-# Linux方法：
-	rm 'demo.txt'
-```
-	
-### 8.写一段自定义异常代码
-```python
-if xxx: raise ValueError('你这个值有问题')    # 或者其他异常类型，抛出错误后就不会执行下面的语句了
-else: print('很棒，没问题')
-```
-
-### 9.举例说明异常模块中 try except else finally 的相关意义
-	• try：需要检测的异常代码片段
-	• except：发生需要重点检查的异常类型时执行的操作
-	• else：发生除了上面except中出现的异常以外其他的异常类型时执行的操作
-	• finally：不管是否发生异常都会执行的代码段
-
-### 10.遇到 bug 如何处理
-	• 根据报错信息找到相应代码，一般的数据结构和算法错误一般找到就能解决；
-	• 设置断点进行debug；
-	• 上搜索引擎，看看人家怎么解决的类似问题；
-	• 长时间解决不出来可以请教他人，别人可能迅速看出来问题而你自己看不出来，因为是你写的bug啊。。
-	• 此路不通，绕道迂回。
+(2)单引号、双引号、三引号的区别：
+1. 单引号和双引号都可以表示字符和字符串，没有区别。只是需要注意，当使用单引号来定义一个字符串时，字符串中的单引号需要转义，而双引号被视为普通字符无需转义。同理，当使用双引号来定义一个字符串时，其中的双引号需要转义而单引号不需要。
+2. 当使用单引号或双引号定义字符串时，想要定义一个多行字符串时需要在换行时加上字符\，最终并不能真正换行，而是隔着一段空白。使用三引号可以方便的定义一个多行字符串，字符串在代码中换行则在输出时也会换行。
+3. 三引号用于文档字符串docstring，解释函数的作用、输入、输出。
