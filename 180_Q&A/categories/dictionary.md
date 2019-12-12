@@ -1,6 +1,6 @@
 # Python字典
 
-###36.字典操作中 del 和 pop 有什么区别
+### 36.字典操作中 del 和 pop 有什么区别
 1. demo_dict.pop(key[,default])：  
 key：删除键key对应条目并返回其键值；
 defaul：可选，若字典中不存在key则返回default值。
@@ -11,7 +11,7 @@ defaul：可选，若字典中不存在key则返回default值。
 demo_dict.clear()：清空字典所有条目；  
 del demo_dict：删除字典。
 
-###37.按照字典的内的年龄排序
+### 37.按照字典的内的年龄排序
 知识点：字典列表排序
 ```python
 demo_dict = [
@@ -51,13 +51,13 @@ result = sorted(demo_dict.items(), key = lambda item: (item[1], item[0]))
 # result: [('3', '0'), ('1', '2'), ('2', '3')]
 ```
 
-###38.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
+### 38.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
 字典a更新为两字典合并后的结果：
 ```python
 a.update(b)
 ```
 
-###39.如何使用生成式的方式生成一个字典，写一段功能代码。
+### 39.如何使用生成式的方式生成一个字典，写一段功能代码。
 字典生成式：```d = {key: value for (key, value) in iterable}```
 ```python
 # 例1：
@@ -71,7 +71,7 @@ dic = {k:'defult_value' for k in lis}
 # dic: {'1': 'defult_value', '2': 'defult_value', '3': 'defult_value'}
 ```
 
-###40.如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}
+### 40.如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}
 zip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
 py3中zip()返回一个迭代器，需要手动转换成dict。

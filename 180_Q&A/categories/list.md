@@ -1,6 +1,6 @@
 # Python列表
 
-###30.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。
+### 30.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。
 1. 转换成set再转回list。
 ```python
 AList = list(set(AList))
@@ -28,13 +28,13 @@ for x in AList:
 		result.append(x)
 ```
 
-###31.如何实现 "1,2,3" 变成 ["1","2","3"]
+### 31.如何实现 "1,2,3" 变成 ["1","2","3"]
 ```python
 string = "1,2,3"
 result = string.split(',')
 ```
 
-###32.给定两个 list，A 和 B，找出相同元素和不同元素
+### 32.给定两个 list，A 和 B，找出相同元素和不同元素
 1. 直接操作list：
 ```python
 same_items = [x for x in A if x in B]
@@ -46,7 +46,7 @@ same_items = list(set(A) & set(B))
 diff_items = list(set(A) ^ set(B))
 ```
 
-###33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
+### 33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
 ```python
 # 1. 列表推导式
 result = [item for inner_list in outer_list for item in inner_list]
@@ -62,7 +62,7 @@ result = sum(outer_list, [])
 ```
 
 
-###34.合并列表[1,5,7,9]和[2,2,6,8]
+### 34.合并列表[1,5,7,9]和[2,2,6,8]
 ```python
 # 1. 使用'+'
 result = list1 + list2
@@ -75,7 +75,7 @@ for x in list2:
 	list1.append(x)
 ```
 
-###35.如何打乱一个列表的元素？
+### 35.如何打乱一个列表的元素？
 ```python
 import random
 random.shuffle(a_list)

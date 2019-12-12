@@ -1,6 +1,6 @@
 # Python字符串
 
-###19.列举 Python 中的基本数据类型？
+### 19.列举 Python 中的基本数据类型？
 类型名		 | 具体类型	
 ------------ | ------------
 数值型(number)  | int， float， bool (True/False)，complex
@@ -10,7 +10,7 @@
 集合	 | set
 字典	 | dict
 
-###20.如何区别可变数据类型和不可变数据类型
+### 20.如何区别可变数据类型和不可变数据类型
   类别		 | 类型名		| 特点	
 ------------ | ------------ | ------------
 可变数据类型	 |  list，set， dict	 | 变量名指向的内存地址可以改变，对其修改是修改了当前地址内的对象。对可变数据类型使用“=”进行复制是浅拷贝，实际上相当于把两个名字不同的指针指向同一地址处的对象，修改其中一个时另外一个也会跟着改变，消除这种影响需要使用深拷贝。
@@ -20,7 +20,7 @@
 * 可变数据类型：在一个变量的内存id不变的情况下可以修改其值；
 * 不可变数据类型：一个变量的值修改之后其内存id也跟着修改了，本质上不是同一个变量了。
 
-###21.将"hello world"转换为首字母大写"Hello World"
+### 21.将"hello world"转换为首字母大写"Hello World"
 ```python
 def first_capitalize(sentence:str) -> str:
 	'''
@@ -46,10 +46,10 @@ def first_capitalize(sentence:str) -> str:
 	return ' '.join(list(map(lambda word: word.capitalize(), sentence.split())))
 ```
 
-###22.如何检测字符串中只含有数字?
+### 22.如何检测字符串中只含有数字?
 使用isdigit()方法，若字符串string只由数字组成，```string.isdigit()```返回True，否则返回False。
 
-###23.将字符串"ilovechina"进行反转
+### 23.将字符串"ilovechina"进行反转
 方法1：使用列表的reverse函数（注意：字符串没有reverse函数）
 ```python
 string = list(string)
@@ -79,7 +79,7 @@ for x in stack:
 return result_str
 ```
 
-###24.Python中的字符串格式化方式你知道哪些？
+### 24.Python中的字符串格式化方式你知道哪些？
 1. % - 格式化：当字符串较长或参数较多时，可读性和可维护性很差。
 ```python
 %s：字符
@@ -104,24 +104,24 @@ return result_str
 name = "Eric"
 age = 74
 f"Hello, {name}. You are {age}."
-```python
+```
 
-###25.有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。
+### 25.有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。
 ```python
 去除左边空格：string.lstrip()
 去除右边空格：string.rstrip()
 去除两边空格：string.strip()
 ```
 
-###26.获取字符串”123456“最后的两个字符。
+### 26.获取字符串”123456“最后的两个字符。
 切片：```string[-2:]```
 
-###27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
+### 27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
 str.encode()：将Unicode字符串编码成其他编码形式；
 str.decode()：将编码后的字符串解码成未编码的Unicode字符串；
 chardet.detect(str)：检查字符串类型并返回（需要import chardet）。
 
-###28. (1)s="info：xiaoZhang 33 shandong"，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong'](2) a = "你好 中国 "，去除多余空格只留一个空格。
+### 28. (1)s="info：xiaoZhang 33 shandong"，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong'](2) a = "你好 中国 "，去除多余空格只留一个空格。
 (1)正则切分字符串
 1. 题意：去除字母和数字以外的字符；
 2. compile：生成一个正则表达式对象；
@@ -137,7 +137,7 @@ a.strip()	# 去除两端空格
 a.rstrip()	# 去除右端空格
 ```
 
-###29. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？
+### 29. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？
 (1)字符串转换：
 1. 字符串中所有字符转大写：string.upper()
 2. 字符串中所有字符转小写：string.lower()
