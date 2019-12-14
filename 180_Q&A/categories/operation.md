@@ -174,7 +174,56 @@ print([i for i in range(101) if i % 2 == 0])
 ```
 
 ### 58.with 语句的作用，写一段代码？
+with语句：上下文管理器，用于资源访问的场合，自动在使用后进行资源的释放和异常处理。  
+线程锁：
+```python
+import threading
+
+num = 0			# 全局变量，多个线程可以读写，用于数据chuandi
+thread_lock = threading.Lock()  # 创建一个锁
+
+
+class MyThread(threading.Thread):
+    """线程锁
+
+    实现一个线程锁
+    :param threading.Thread:当前线程
+    :return:
+    """
+
+    def run(self):
+        global num
+        with thread_lock:			# 当前上下文，自动获取和释放线程资源
+            for i in range(1000):  # 锁定期间，其他线程不能运行
+                num += 1
+        print(num)
+```
+
 ### 59.python 字典和 json 字符串相互转化方法
+```python
+import json
+
+# 序列化：
+
+dict_demo = {'a': 1, 'b': 2}
+# 1. 使用json.dumps()将python数据类型转化为json字符串
+json_demo = json.dumps(dict_demo)
+# 2. 使用json.dump()将python数据序列化后保存到指定文件
+with open('demo.json') as file:
+    json.dump(dict_demo, file)
+
+
+# 反序列化：
+
+# 1. 使用json.loads()将json字符类型转化为python类型
+dict_demo = json.loads(json_demo)
+print(dict_demo)
+# 2. 使用json.load()将json字符类型从指定文件中提取出来并转化为python类型
+with open('demo.json', 'r') as file:
+	file_data = json.load(file)
+	print(file_data)
+```
+
 ### 60.请写一个 Python 逻辑，计算一个文件中的大写字母数量
 ### 61. 请写一段 Python连接 Mongo 数据库，然后的查询代码。
 ### 62.说一说 Redis 的基本类型。
