@@ -132,7 +132,99 @@ def merge(list1, list2):
 
 
 ### 快速排序
+快速排序的思想可以参考二叉搜索树BST的结构特点：二叉树的每个父节点的左子树的所有结点均小于它，其所有右子树结点均大于它。BST隐式实现了分治法，对其左右子树分别处理。  
+快速排序每次选择一个轴值(pivot)，并将比pivot小的元素均移动到它左边，比它大的元素均移动到它右边，这样完成一次划分(partition)。之后再分别对左边部分和右边部分进行这样的划分操作，直到子序列的元素个数只有一个或零个，此时整个序列排序完成。
 
+```python
+def quick_sort(nums:list):
+    '''快速排序
+    
+    使用快速排序算法将待排序序列升序排列
+    :param nums: 待排序序列
+    :return: 原址排序，无返回值
+    '''
+    n = len(nums)
+    quick_sort_recursive(nums, 0, n-1)
+
+
+def quick_sort_recursive(nums:list, start:int, end:int):
+    '''递归地对序列进行快速排序
+    
+    使用快速排序算法将待排序序列升序排列
+    :param nums: 待排序子序列
+    :param start: 待排序子序列的起始坐标
+    :param end: 待排序子序列的结尾坐标
+    :return: 原址排序，无返回值
+    '''
+    if start >= end: return    # 只剩0或1个元素时不用进行排序
+    pivot_index = find_pivot(start, end)   # 找出轴值下标
+    nums[pivot_index], nums[end] = nums[end], nums[pivot_index] # 将轴值交换到数组最后
+    partition_index = partition(nums, start, end, nums[end])   # 完成一次划分并找出右半部分起始位置坐标
+    nums[partition_index], nums[end] = nums[end], nums[partition_index] # 将轴值交换回分割两部分的位置
+    quick_sort_recursive(nums, start, partition_index-1)     # 对左子序列排序
+    quick_sort_recursive(nums, partition_index+1, end)    # 对右子序列排序
+
+
+def find_pivot(start:int, end:int) -> int:
+    '''找出快速排序的轴值：这里使用中间元素作为轴值
+
+    :param start: 待排序子序列的起始坐标
+    :param end: 待排序子序列的结尾坐标
+    :return: 返回轴值的坐标
+    '''
+    return (start + end) // 2
+
+
+def partition(nums:list, left:int, right:int, pivot:int) -> int:
+    '''完成一次快速排序的划分操作
+    
+    :param nums: 待排序子序列
+    :param left: 待排序子序列的起始坐标
+    :param right: 待排序子序列的结尾坐标
+    :param pivot: 待排序子序列的轴值坐标
+    :return: 返回划分后右半部分的起始位置
+    '''
+    while left < right:
+        while left < right and nums[left] < pivot:
+            left += 1
+        while left < right and  nums[right] >= pivot:
+            right -= 1
+        nums[left], nums[right] = nums[right], nums[left]
+    return left
+```
+
+简化版（非原址排序，空间复杂度**O(nlogn)**）:
+```python
+def quick_sort(nums: list):
+    '''快速排序
+
+    使用快速排序算法将待排序序列升序排列
+    :param nums: 待排序序列
+    :return: 原址排序，无返回值
+    '''
+    n = len(nums)
+    if n <= 1:
+        return nums    # 只剩0或1个元素时不用进行排序
+    pivot = nums[(n // 2)]   # 找出轴值
+    left, right = [], []    # 左右子序列
+    nums.remove(pivot)      # 从原序列中移除轴值
+    for x in nums:          # 遍历序列并将其中的元素分到左右子序列中
+        if x >= pivot:
+            right.append(x)
+        else:
+            left.append(x)
+    return quick_sort(left) + [pivot] + quick_sort(right)
+```
+1. **稳定性**：频繁交换，不稳定。
+2. **时间复杂度**：find_pivot函数常数时间复杂度。partition函数运行一遍left和right会向中间移动直至相遇，其时间复杂度为**O(s)**,s为子序列元素个数。整个快速排序算法的时间复杂度：  
+	- 最佳情况：每次划分时轴值都将序列划分为相等的两部分，此时一共需要logn次划分，总时间代价为**O(nlogn)**；
+	- 最差情况：每次划分都极不均匀（倒序时），一部分没有元素，另一部分n-1个元素，此时每个子问题的规模只减少1，此时总时间代价为(1~n累加)为**O(n^2)**。此时快排并不比冒泡优秀，但这种假设的情况非常极端，不太可能出现。
+	- 平均情况：假设每种排列等概率出现，每种排列的时间开销之和除以总的排列数(n!)，最终得到平均开销为**O(nlogn)**。
+
+**快速排序的改进**：
+1. 快排的时间复杂度可以通过改进常数因子得到优化，最明显的改进之处为find_pivot函数，因为轴值的选择对序列划分影响很大。 使用“三者取中法”，每次随机找三个值，将其中中间大小的一个作为轴值，这样会提高均匀划分的概率。
+2. 分治思想的排序在处理大数据集量时效果比较好，小数据集性能差些。因此可以在数组长度较小时（一般是小于等于9时）使用插入排序（快速排序的划分已经让数组基本有序，使用插入排序有接近线性的时间复杂度）。
+3. 快速排序本质上是递归的，当需要存储的信息不多时可以使用栈来模拟递归调用。
 
 
 ### 堆排序
