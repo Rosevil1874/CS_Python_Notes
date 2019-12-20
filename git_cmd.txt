@@ -1,0 +1,21 @@
+提交步骤：
+进入当前目录：
+cd C:/Git_repositories/LeetCode
+
+查看文件状态：
+git status
+
+添加untracked files：
+git add xxx.xx （添加xxx文件)
+git add . (添加所有修改和更新)
+
+提交添加的文件并作说明：
+git commit -m "xxxxxx"
+
+提交到远程仓库：
+git push
+
+
+其他：
+查看历史提交记录：
+git log

@@ -321,7 +321,93 @@ def heap_sort(nums: list):
 3. 如果希望找到序列中第k大的元素，使用堆排序的时间复杂度是O(n+klogn)，远快于前面需要先对整个数组排序的算法（冒泡和选择不用对整个数组排序）。
 
 
+## 3种利用桶的排序方法
+### 计数排序
+将元素作为键值存储在新开辟的空间中，值为x的元素则存储在键为x的桶中，每个桶只能装这一个值的元素。然后统计每个元素小于它的值的个数number，将这个元素放在结果数组的number位置上。  
+作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。
+```python
+def counting_sort(nums: list) -> list:
+    '''
+    计数排序
+
+    使用计数排序对序列进行升序排列
+    :param nums: 待排序序列
+    :return: 排序后的序列
+    '''
+    n = len(nums)
+    max_val = max(nums)
+
+    count = [0 for i in range(max_val + 1)]  # 计数序列：初始化为0
+    result = [0 for i in range(n)]   # 结果序列：初始化为0
+
+    # 将每个元素放入以其为下标的桶中
+    for x in nums:
+        count[x] += 1
+    # 计算有多少个元素小于等于每个下标
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+
+    # 从每个桶中取中元素放到结果数组正确的位置上
+    for x in nums:
+        result[count[x] - 1] = x
+        count[x] -= 1
+    return result
+```
+
+
+### 桶排序
+桶排序是计数排序的升级版，它将某些值存储在符合映射关系的桶中，每个桶中的值分别排序后合并。选择合适的映射函数能使桶排序更加高效：
+1. 在额外空间充足的情况下尽量增大桶的数量，即每个桶装尽可能少的值；
+2. 使用的映射函数尽可能将序列中的元素均匀地映射到每个桶中。
+```python
+def bucket_sort(nums: list) -> list:
+    '''
+    桶排序
+
+    使用桶排序对序列进行升序排列
+    :param nums: 待排序序列
+    :return: 排序后的序列
+    '''
+    n = len(nums)
+    min_val, max_val = min(nums), max(nums)
+
+    buckets = [0 for i in range(max_val - min_val + 1)]  # 桶：初始化为0
+    result = []   # 结果序列
+
+    # 将每个元素放入相应的桶中
+    for x in nums:
+        buckets[x - min_val] += 1
+
+    # 计算有多少个元素小于等于每个下标
+    for i in range(len(buckets)):
+        if buckets[i] != 0:
+            result += [min_val + i] * buckets[i]
+
+    return result
+```
+最佳情况：所有元素均匀地映射到各个桶中；最差情况：所有元素映射到同一个桶中。
+
+
 ### 基数排序
+基数排序将元素按位分割，每个位分别比较并放入不同的桶中。基数排序的总体思路就是将待排序数据拆分成多个关键字进行排序，也就是说，基数排序的实质是多关键字排序。
+```python
+def radix_sort(nums: list, d=3) -> list:
+    '''
+    基数排序
+
+    使用基数排序对序列进行升序排列
+    :param nums: 待排序序列
+    :param d: 待排序序列中每个元素的位数，默认为3位
+    :return: 排序后的序列
+    '''
+    for i in range(d):	# d轮排序
+    	buckets = [[] for item in range(10)]	# 每一位均为0~9共10个数字，建10个桶
+    	for x in nums:
+    		buckets[int(x // (10 ** i)) % 10].append(x)
+    	result = [x for bucekt in buckets for x in bucekt]
+
+    return result
+```
 
 >参考：  
 《数据结构与算法分析（C++版）（第三版）》
