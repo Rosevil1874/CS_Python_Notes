@@ -6,8 +6,30 @@
 PEP【Python Enhancement Proposal】，即Python增强建议书，是一种代码规范，旨在增加代码可读性。
 
 ### 8.了解 Python 之禅么？
-python的设计哲学：简洁、优雅。  
-![zen_of_python](../../images/zen_of_python.png)
+python的设计哲学：简洁、优雅。  `import this`:
+```
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
 >优美胜于丑陋；  
 明了胜于晦涩；  
 简洁胜于复杂；  
@@ -30,18 +52,18 @@ docstring：文档字符串。用于解释程序，是模块、类、方法中�
 Python是动态语言，变量和函数参数不区分类型，代码编写速度快。但阅读别人的代码或者回头看自己以前的代码可能需要一定时间理解这些变量返回值到底是什么类型。因此python3中添加了“类型注解”特性，可以给函数参数、返回值和变量加上注解，提高代码可读性。
 
 ### 11.例举你知道 Python 对象的命名规范，例如方法或者类等。
-• 变量：小写加下划线。
-	○ 单下划线开头是私有变量，程序员之间约定不要在外部访问它，但实际上还是可以访问到的；
-	○ 双下划线开头的变量是私有类型（private）的变量，只允许类内部访问，子类也不能访问；
-	○ 双下划线开头和结尾的是内置变量，可以直接访问，如```__init__```,```__file__```,```__import__```等；
-	○ 单下划线结尾的变量是为了和关键字区分，如```class_```。
-• 全局变量和常量：全大写加下划线。
-• 函数参数：小写加下划线。避免滥用```*args```和```*kwargs```，可能破坏函数健壮性。
-• 函数，方法：小写加下划线。
-	○ 私有方法：单下划线开头；
-	○ 特殊方法（如运算符重载等）：双下划线开头；
-• 类：驼峰命名。基类前可加‘Base’或‘Abstract’。异常也是类，异常名为驼峰命名后加一个‘Error’。
-• 模块和包：模块尽量使用简短全小写，为了提高可读性也可用下划线；包使用全小写，不推荐加下划线。
+	• 变量：小写加下划线。
+		○ 单下划线开头是私有变量，程序员之间约定不要在外部访问它，但实际上还是可以访问到的；
+		○ 双下划线开头的变量是私有类型（private）的变量，只允许类内部访问，子类也不能访问；
+		○ 双下划线开头和结尾的是内置变量，可以直接访问，如```__init__```,```__file__```,```__import__```等；
+		○ 单下划线结尾的变量是为了和关键字区分，如```class_```。
+	• 全局变量和常量：全大写加下划线。
+	• 函数参数：小写加下划线。避免滥用```*args```和```*kwargs```，可能破坏函数健壮性。
+	• 函数，方法：小写加下划线。
+		○ 私有方法：单下划线开头；
+		○ 特殊方法（如运算符重载等）：双下划线开头；
+	• 类：驼峰命名。基类前可加‘Base’或‘Abstract’。异常也是类，异常名为驼峰命名后加一个‘Error’。
+	• 模块和包：模块尽量使用简短全小写，为了提高可读性也可用下划线；包使用全小写，不推荐加下划线。
 
 	
 ### 12.Python 中的注释有几种？
