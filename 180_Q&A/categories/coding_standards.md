@@ -7,7 +7,7 @@ PEP【Python Enhancement Proposal】，即Python增强建议书，是一种代�
 
 ### 8.了解 Python 之禅么？
 python的设计哲学：简洁、优雅。  
-![zen_of_python]('../images/zen_of_python.png')
+![zen_of_python](../../images/zen_of_python.png)
 >优美胜于丑陋；  
 明了胜于晦涩；  
 简洁胜于复杂；  

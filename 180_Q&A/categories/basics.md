@@ -30,9 +30,9 @@ import glob	基于文件通配符搜索	 | pymysql	数据库
 * with语句适用于对资源进行访问的场合，无论是否发生异常都会进行必要的清理操作以释放资源，如文件使用后自动关闭，线程中自动进行锁的获取和释放等。
 * with关键字后面跟着的语句会返回一个上下文管理器，上下文管理器在使用```__enter__()```方法进入运行时上下文，操作结束后使用```__exit__()```退出运行时上下文。
 * 读文件：
-![read_file](../images/read_file.png)
+![read_file](180_Q%26A/images/read_file.png)
 * 写文件：
-![write_file](../images/write_file.png)
+![write_file](180_Q%26A/images/write_file.png)
 
 
 ### 4.列出 Python 中可变数据类型和不可变数据类型，为什么？
