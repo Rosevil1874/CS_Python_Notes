@@ -1,6 +1,6 @@
 提交步骤：
 进入当前目录：
-cd C:/Git_repositories/LeetCode
+cd C:/Git_repositories/CS_Python_Notes
 
 查看文件状态：
 git status
@@ -15,6 +15,8 @@ git commit -m "xxxxxx"
 提交到远程仓库：
 git push
 
+拉取远程仓库内容同步到本地：
+git pull
 
 其他：
 查看历史提交记录：
