@@ -22,8 +22,8 @@
 
 ### 	4. python3与python2之间的区别
 	a. 编码：
-		i. python2字符类型：str:编码后的字节序列，Unicode：编码前的文本字符；
-		ii. python3字符类型：str:编码后的Unicode文本字符，bytes：编码钱的字节序列。
+		python2字符类型：str:编码后的字节序列，Unicode：编码前的文本字符；  
+		python3字符类型：str:编码后的Unicode文本字符，bytes：编码钱的字节序列。  
 		python2中两种状态都有encode和decode方法，python3优化后str只有encode方法转化为字节码，bytes只有decode方法转化为文本字符串。
 		python2中需要在文件头上加注释 # coding: utf-8 指定编码格式。
 	b. print
