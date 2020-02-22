@@ -1,5 +1,7 @@
 # 《程序员面试金典》题解【Python】
 
+>这本书里面的题目描述得大都很迷，参数也很迷，理解了找到方法就好。
+
 ## 1. 数字与字符串
 
 [01.01. 判定字符是否唯一](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/01.01.md)  
@@ -23,3 +25,10 @@
 [02.06. 回文链表](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/02.06.md)  
 [02.07. 链表相交](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/02.07.md)  
 [02.08. 环路检测](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/02.08.md)  
+
+
+## 栈与队列
+[03.01. 三合一](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.01.md)
+[03.02. 栈的最小值](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.02.md)
+[03.03. 堆盘子](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.03.md)
+[03.04. 化栈为队](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.04.md)
