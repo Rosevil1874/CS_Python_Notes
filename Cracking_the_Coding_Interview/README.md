@@ -42,3 +42,6 @@
 [04.05. 合法二叉搜索树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.05.md)
 [04.06. 后继者](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.06.md)
 [04.08. 首个共同祖先](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.08.md)
+[04.09. 二叉搜索序列](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.09.md)
+[04.10. 检查子树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.10.md)
+[04.12. 路径求和](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.12.md)
