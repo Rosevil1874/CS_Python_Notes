@@ -32,3 +32,13 @@
 [03.02. 栈的最小值](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.02.md)
 [03.03. 堆盘子](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.03.md)
 [03.04. 化栈为队](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.04.md)
+
+
+## 树与图
+[04.01. 节点间通路](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.01.md)
+[04.02. 最小高度树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.02.md)
+[04.03. 特定深度节点链表](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.03.md)
+[04.04. 检查平衡性](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.04.md)
+[04.05. 合法二叉搜索树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.05.md)
+[04.06. 后继者](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.06.md)
+[04.08. 首个共同祖先](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.08.md)
