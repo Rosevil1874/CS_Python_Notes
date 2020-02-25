@@ -27,14 +27,14 @@
 [02.08. 环路检测](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/02.08.md)  
 
 
-## 栈与队列
+## 3. 栈与队列
 [03.01. 三合一](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.01.md)
 [03.02. 栈的最小值](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.02.md)
 [03.03. 堆盘子](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.03.md)
 [03.04. 化栈为队](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/03.04.md)
 
 
-## 树与图
+## 4. 树与图
 [04.01. 节点间通路](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.01.md)
 [04.02. 最小高度树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.02.md)
 [04.03. 特定深度节点链表](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.03.md)
@@ -45,3 +45,12 @@
 [04.09. 二叉搜索序列](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.09.md)
 [04.10. 检查子树](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.10.md)
 [04.12. 路径求和](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/04.12.md)
+
+
+## 5. 位操作
+[05.01. 插入](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.01.md)
+[05.02. 二进制数转字符串](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.02.md)
+[05.03. 翻转数位](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.03.md)
+[05.04. 下一个数](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.04.md)
+[05.06. 整数转换](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.06.md)
+[05.07. 整数转换](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.07.md)
