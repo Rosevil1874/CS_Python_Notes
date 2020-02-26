@@ -1,5 +1,10 @@
 ## Python 实现10种常见排序算法
 
+
+>参考：  
+《数据结构与算法分析（C++版）（第三版）》
+《算法导论（原书第三版）》
+
 >注：
 1. 本文只包含内排序，只在计算机内存中进行进行排序的算法。当待排序数据太大，不能在内存中记录排序数据时需要访问外存，则为外排序。
 2. 本文中默认实现升序排序。
@@ -23,26 +28,26 @@
 
 ### 快速跳转[TOC]
 
-- [3种代价为O(n^2)的交换排序](#exchange sort)
-    - [插入排序](#insertion sort)
-    - [选择排序](#selection sort)
-    - [冒泡排序](#bubble sort)
-- [3种基于二分/分治思想的排序算法](#divide-and-conquer sort)
-    - [Shell排序](#shell sort)
-    - [归并排序](#merge sort)
-    - [堆排序](#heap sort)
-- [快速排序](#quick sort)
-- [3种分配排序](#distributive sort)
-    - [计数排序](#counting sort)
-    - [桶排序](#bucket sort)
-    - [基数排序](#radix sort)
+- [3种代价为O(n^2)的交换排序](#exchange_sort)
+    - [插入排序](#insertion_sort)
+    - [选择排序](#selection_sort)
+    - [冒泡排序](#bubble_sort)
+- [3种基于二分/分治思想的排序算法](#divide-and-conquer_sort)
+    - [Shell排序](#shell_sort)
+    - [归并排序](#merge_sort)
+    - [堆排序](#heap_sort)
+- [快速排序](#quick_sort)
+- [3种分配排序](#distributive_sort)
+    - [计数排序](#counting_sort)
+    - [桶排序](#bucket_sort)
+    - [基数排序](#radix_sort)
 
 
 ***
 ***
 
-<h2 id="exchange sort"></h2>
-<h3 id="insertion sort"></h3>
+<h2 id="exchange_sort"></h2>
+<h3 id="insertion_sort"></h3>
 
 ### 插入排序
 每个新元素与前面已排序的子序列进行比较，将其插入子序列中正确的位置。
@@ -70,7 +75,7 @@ def insertion_sort(nums):
 
 ***
 
-<h3 id="selection sort"></h3>
+<h3 id="selection_sort"></h3>
 
 ### 选择排序
 选择排序每次将第i小的元素放到位置i处，可以将其看作冒泡排序的改进，冒泡排序是每次将dii小的元素交换到位置i，选择排序是直接找出这个元素并插入位置i。
@@ -89,7 +94,7 @@ def selection_sort(nums):
 
 ***
 
-<h3 id="bubble sort"></h3>
+<h3 id="bubble_sort"></h3>
 
 ### 冒泡排序
 从后往前冒泡：列表前面部分为已排序序列，每次像泡泡一样，将未排序部分最小的元素依次交换到列表前已排序子序列的最后；  
@@ -123,8 +128,8 @@ def bubble_sort(nums):
 ***
 ***
 
-<h2 id="divide-and-conquer sort"></h2>
-<h3 id="shell sort"></h3>
+<h2 id="divide-and-conquer_sort"></h2>
+<h3 id="shell_sort"></h3>
 
 ## 3种基于二分/分治思想的排序算法
 ### Shell排序
@@ -159,7 +164,7 @@ def shell_sort(nums: list):
 
 ***
 
-<h3 id="merge sort"></h3>
+<h3 id="merge_sort"></h3>
 
 ### 归并排序
 分而治之：将待排序列表分成片段，先处理好各个片段，再将这些片段合并。我们通常说的归并排序是二路归并，即每次将待排序序列分成两半。
@@ -202,7 +207,7 @@ def merge(list1, list2):
 
 ***
 
-<h3 id="heap sort"></h3>
+<h3 id="heap_sort"></h3>
 
 ### 堆排序
 **堆：**
@@ -268,7 +273,7 @@ def heap_sort(nums: list):
 
 ***
 
-<h2 id="quick sort"></h2>
+<h2 id="quick_sort"></h2>
 
 ## 快速排序
 快速排序的思想可以参考二叉搜索树BST的结构特点：二叉树的每个父节点的左子树的所有结点均小于它，其所有右子树结点均大于它。BST隐式实现了分治法，对其左右子树分别处理。  
@@ -356,9 +361,11 @@ def quick_sort(nums: list):
 ```
 1. **稳定性**：频繁交换，不稳定。
 2. **时间复杂度**：find_pivot函数常数时间复杂度。partition函数运行一遍left和right会向中间移动直至相遇，其时间复杂度为**O(s)**,s为子序列元素个数。整个快速排序算法的时间复杂度：  
-	- 最佳情况：每次划分时轴值都将序列划分为相等的两部分，此时一共需要logn次划分，总时间代价为**O(nlogn)**；
-	- 最差情况：每次划分都极不均匀（倒序时），一部分没有元素，另一部分n-1个元素，此时每个子问题的规模只减少1，此时总时间代价为(1~n累加)为**O(n^2)**。此时快排并不比冒泡优秀，但这种假设的情况非常极端，不太可能出现。
-	- 平均情况：假设每种排列等概率出现，每种排列的时间开销之和除以总的排列数(n!)，最终得到平均开销为**O(nlogn)**。
+    - 最佳情况：每次划分时轴值都将序列划分为相等的两部分，此时一共需要logn次划分，总时间代价为**O(nlogn)**；
+    - 最差情况：每次划分都极不均匀（倒序时），一部分没有元素，另一部分n-1个元素，此时每个子问题的规模只减少1，此时总时间代价为(1~n累加)为**O(n^2)**。此时快排并不比冒泡优秀，但这种假设的情况非常极端，不太可能出现。
+    - 平均情况：假设每种排列等概率出现，每种排列的时间开销之和除以总的排列数(n!)，最终得到平均开销为**O(nlogn)**。
+
+
 
 **快速排序的改进**：
 1. 快排的时间复杂度可以通过改进常数因子得到优化，最明显的改进之处为find_pivot函数，因为轴值的选择对序列划分影响很大。 使用“三者取中法”，每次随机找三个值，将其中中间大小的一个作为轴值，这样会提高均匀划分的概率。
@@ -368,8 +375,8 @@ def quick_sort(nums: list):
 ***
 ***
 
-<h2 id="distributive sort"></h2>
-<h3 id="counting sort"></h3>
+<h2 id="distributive_sort"></h2>
+<h3 id="counting_sort"></h3>
 
 ## 3种分配排序
 ### 计数排序
@@ -406,7 +413,7 @@ def counting_sort(nums: list) -> list:
 
 ***
 
-<h3 id="bucket sort"></h3>
+<h3 id="bucket_sort"></h3>
 
 ### 桶排序
 桶排序是计数排序的升级版，它将某些值存储在符合映射关系的桶中，每个桶中的值分别排序后合并。选择合适的映射函数能使桶排序更加高效：
@@ -442,7 +449,7 @@ def bucket_sort(nums: list) -> list:
 
 ***
 
-<h3 id="radix sort"></h3>
+<h3 id="radix_sort"></h3>
 
 ### 基数排序
 基数排序将元素按位分割，每个位分别比较并放入不同的桶中，从最低位开始到最高位，有k位的数字需要进行k次分配调整其所在的桶。基数排序的总体思路就是将待排序数据拆分成多个关键字进行排序，也就是说，基数排序的实质是多关键字排序。
@@ -502,7 +509,3 @@ def radix_sort(nums: list) -> list:
 2. **时间复杂度**：基于桶数和元素最大位数均为常数的假设，其最佳、平均、最差时间复杂度均为**O(n)**。
 3. **空间复杂度**：需要额外O(n + k)的空间，n为元素个数，k为桶数。
 
-
->参考：  
-《数据结构与算法分析（C++版）（第三版）》
-《算法导论（原书第三版）》
