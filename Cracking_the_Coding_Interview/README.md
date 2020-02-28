@@ -54,3 +54,12 @@
 [05.04. 下一个数](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.04.md)
 [05.06. 整数转换](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.06.md)
 [05.07. 整数转换](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/05.07.md)
+
+
+## 8. 递归与动态规划
+[08.01. 三步问题](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.01.md)
+[08.02. 迷路的机器人](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.02.md)
+[08.03. 魔术索引](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.03.md)
+[08.04. 幂集](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.04.md)
+[08.05. 递归乘法](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.05.md)
+[08.06. 汉诺塔问题](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.06.md)
