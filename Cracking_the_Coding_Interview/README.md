@@ -69,3 +69,13 @@
 [08.10. 颜色填充](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.10.md)
 [08.11. 硬币](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.11.md)
 [08.12. 八皇后](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/08.12.md)
+
+
+## 10. 排序和查找
+[10.01. 合并排序的数组](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.01.md)
+[10.02. 变位词组](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.02.md)
+[10.03. 搜索旋转数组](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.03.md)
+[10.05. 稀疏数组搜索](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.05.md)
+[10.09. 排序矩阵查找](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.09.md)
+[10.10. 数字流的秩](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.10.md)
+[10.11. 峰与谷](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview/python_solution/10.11.md)
