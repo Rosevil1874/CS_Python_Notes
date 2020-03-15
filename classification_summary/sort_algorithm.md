@@ -359,6 +359,36 @@ def quick_sort(nums: list):
             left.append(x)
     return quick_sort(left) + [pivot] + quick_sort(right)
 ```
+
+
+迭代实现快速排序：
+```python
+def quick_sort(nums, l, r):
+    if l >= r:
+        return 
+
+    stack = []
+    stack.append(l)
+    stack.append(r)
+
+    while stack:
+        l = stack.pop(0)
+        r = stack.pop(0)
+        if r - l <= 0:
+            continue
+        pivot = nums[r]
+        i = l - 1
+        for j in range(l, r):
+            if nums[j] <= pivot:
+                i += 1
+                if i != j:
+                    nums[i], nums[j] = nums[j], nums[i]
+        # 把pivot交换回中间
+        nums[i + 1], nums[r] = nums[r], nums[i + 1]
+        stack.extend([l, i, i + 2, r])
+    return nums
+```
+
 1. **稳定性**：频繁交换，不稳定。
 2. **时间复杂度**：find_pivot函数常数时间复杂度。partition函数运行一遍left和right会向中间移动直至相遇，其时间复杂度为**O(s)**, s为子序列元素个数。整个快速排序算法的时间复杂度：  
     - 最佳情况：每次划分时轴值都将序列划分为相等的两部分，此时一共需要logn次划分，总时间代价为**O(nlogn)**；
@@ -410,6 +440,8 @@ def counting_sort(nums: list) -> list:
         count[x] -= 1
     return result
 ```
+
+
 
 ***
 

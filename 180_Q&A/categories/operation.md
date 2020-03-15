@@ -168,6 +168,7 @@ if __name__ == '__main__':
     print(strappend(5))
 ```
 
+
 ### 57.一行代码输出 1-100 之间的所有偶数。
 ```python
 print([i for i in range(101) if i % 2 == 0])
@@ -199,6 +200,7 @@ class MyThread(threading.Thread):
         print(num)
 ```
 
+
 ### 59.python 字典和 json 字符串相互转化方法
 ```python
 import json
@@ -224,13 +226,141 @@ with open('demo.json', 'r') as file:
 	print(file_data)
 ```
 
+
 ### 60.请写一个 Python 逻辑，计算一个文件中的大写字母数量
+```python
+import re
+def capital_count(file_path):
+	'''计算文件中大写字母的个数
+	
+	读取文件，计算文件中大写字母的个数
+	:param file_path:文件路径
+	:return: 文件中大写字母的数量
+	'''
+	with open (file_path, 'r') as file:
+		data = file.read()
+
+	# 将非字母删除
+	data = re.sub('^[a-zA-Z]', '', data)
+
+	# 逐个判断是否为大写字母并计数
+	cnt = 0
+	for c in data:
+		if c.isupper():
+			cnt += 1
+	return cnt
+
+
+if __name__ == '__main__':
+	print(capital_count('test.txt'))
+```
+
+
 ### 61. 请写一段 Python连接 Mongo 数据库，然后的查询代码。
+```python
+import pymongo
+
+# 连接本地数据库
+db_client = pymongo.MongoClient('mongodb://localhost:27017/')
+
+# 切换到testdb数据库
+test_db = db_client['testdb']
+
+# 切换到’sites‘文档
+sites_obj = test_db['sites']
+
+# find_one() 方法查询集合中的一条数据
+first_data = sites_obj.find_one()
+print(first_data)
+```
+
+
 ### 62.说一说 Redis 的基本类型。
+* 字符串： string
+* 列表： list
+* 哈希： hash
+* 集合： set
+* 有序集合sorted set： zset
+
+
 ### 63. 请写一段 Python连接 Redis 数据库的代码。
+```python
+import redis
+
+# 创建连接对象
+conn_obj = redis.Redis(host='localhost', port=6379, db=0)
+
+# 设置一个键值
+conn_obj.set('test', '1')
+
+# 读取一个键值
+conn_obj.get('test')
+```
+
+
 ### 64. 请写一段 Python 连接 MySQL 数据库的代码。
+游标：一条SQL语句对应一个资源集合，而游标是访问其中一行数据的接口，相当于资源集合的下标。
+```python
+import pymysql
+
+# 连接数据库
+db = pymysql.connect('localhost', 'testuser', 'test123', 'TESTDB', charset='utf8')
+
+# 使用cursor()方法操作游标
+cursor = db.cursor()
+
+# 使用execute()方法执行SQL语句
+cursor.execute('SELECT VERSION()')
+
+# 使用fetclone()方法获取一条数据
+data = cursor.fetclone()
+
+# 关闭数据库连接
+db.close()
+```
+
+
 ### 65.了解 Redis 的事务么？
+1. 事务的概念：事务提供了“将多个命令打包一次性提交，并按顺序执行”的能力，事务在执行过程中不会被打断，只有事务全部执行完毕才会继续执行其他命令。
+2. redis事务实现：redis使用`multi，exec，discard，watch`实现事务：
+* multi：开始事务；
+* exec：提交并执行事务
+* discard：取消事务
+* watch：事务开始之前监视任意数量的键
+* unwatch：取消watch命令的监视
+3. redis的ACID：
+* 单独的隔离操作：事务中的命令在提交后按顺序执行，不会被其他命令打断；
+* 没有隔离级别的概念：队列中的命令在实际提交之前不会执行；
+* 不保证原子性：事务中若有一个任务执行失败，仍会继续执行后面的任务，不会回滚。
+
+
 ### 66.了解数据库的三范式么？
+范式是为了解决“冗余数据，插入异常，删除异常，修改异常”，低级别范式依赖于高级别范式，1NF是最低级别的范式。
+* 第一范式：属性不可分
+* 第二范式：每个非主属性完全依赖于键码
+* 第三范式：非主属性不传递依赖于键码
+
+
 ### 67.了解分布式锁么？
+当使用多进程或多线程的时候，多个进程或线程对同一资源进行抢占，对其读写操作可能引发数据不一致。因此，为了保证数据安全，引入了进程锁和线程锁对分布式系统共享资源的访问进行控制，通过互斥来保证一致性。  
+常见的分布式锁的实现有MySQL，zookeeper，redis等。
+
 ### 68.用 Python 实现一个 Reids 的分布式锁的功能。
+```python
+略。
+```
+
 ### 69.写一段 Python 使用 Mongo 数据库创建索引的代码。
+```python
+import pymongo
+from pymongo import ASCENDING, DECENDING
+
+# 连接数据库，创建连接对象
+my_client = pymongo.MongoClient(mongodburl)
+
+# 切换数据库
+my_db = my_client[dbName]
+
+# 创建索引，create_index()创建索引，可以有多个约束条件，值1为升序，-1为降序
+my_db.creat_index([('date', DECENDING), ('author', ASCENDING)])
+```
