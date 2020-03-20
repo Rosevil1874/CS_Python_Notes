@@ -32,7 +32,8 @@ class Solution:
     def top(self):
         # 直接返回栈顶
         if not self.stack:
-            return self.stack[-1]
+            return None
+        return self.stack[-1]
  
     def min(self):
         # 直接返回辅助栈顶

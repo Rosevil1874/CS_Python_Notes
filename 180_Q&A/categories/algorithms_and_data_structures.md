@@ -340,24 +340,25 @@ def char_sort(s: str) -> str:
 
 ### 133.单链表反转
 ```python
-class ListNode:
-	def __init__(self, val):
-		self.val = val
-		self.next = None
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
 
-def reverse_linked_list(head: ListNode) -> ListNode:
-	if not head or not head.next:
-		return head
-		
-	new_head, temp = None, None
-	curr = head
-	while curr:
-		temp = curr.next
-		curr.next = new_head
-		new_head = curr
-		curr = temp
-	return new_head
+        new_head, temp = None, None
+        curr = head
+        while curr:
+            temp = curr.next
+            curr.next = new_head
+            new_head = curr
+            curr = temp
+        return new_head
 
 
 head = ListNode(0)
