@@ -11,3 +11,8 @@ Some notes about computer sience and Python.
 * [剑指offer题解【Python】](https://github.com/Rosevil1874/CS_Python_Notes/tree/master/sword_points_offer)
 * [《程序员面试金典(第6版)》题解【Python】](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/Cracking_the_Coding_Interview)
 * [算法知识分类总结【python实现】](https://github.com/Rosevil1874/CS_Python_Notes/tree/master/classification_summary)
+
+
+## 面试题
+* [C++](https://github.com/Rosevil1874/CS_Python_Notes/CS_interview_questions/C++.md)
+* [数据库](https://github.com/Rosevil1874/CS_Python_Notes/CS_interview_questions/Database.md)
