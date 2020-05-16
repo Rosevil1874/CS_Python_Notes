@@ -14,5 +14,9 @@ Some notes about computer sience and Python.
 
 
 ## 面试题
-* [C++](https://github.com/Rosevil1874/CS_Python_Notes/CS_interview_questions/C++.md)
-* [数据库](https://github.com/Rosevil1874/CS_Python_Notes/CS_interview_questions/Database.md)
+* [数据库](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/Database.md)
+* [操作系统](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/OS.md)
+* [计算机网络](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/Computer_networks.md)
+* [Linux](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/Linux.md)
+* [C++](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/C%2B%2B.md)
+* [其他](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/CS_interview_questions/Others.md)
