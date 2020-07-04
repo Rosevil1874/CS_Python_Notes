@@ -6,16 +6,16 @@
 * [字符串](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/string.md)
 * [列表](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/list.md)
 * [字典](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/dictionary.md)
-* [数据类型(综合)](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/comprehensive.md)
-* [操作类题目](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/operation.md)
-* [高级特性](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/advanced_features.md)
-* [正则表达式](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/regular_expression.md)
-* [其他内容](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/other_content.md)
-* [算法和数据结构](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/algorithms_and_data_structures.md)
+* [数据类型(综合)](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/comprehensive.md)
+* [操作类题目](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/operation.md)
+* [高级特性](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/advanced_features.md)
+* [正则表达式](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/regular_expression.md)
+* [其他内容](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/other_content.md)
+* [算法和数据结构](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/algorithms_and_data_structures.md)
 * 爬虫相关（略）
-* [网络编程](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/network_programming.md)
-* [并发](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/concurrency.md)
-* [Git](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/git.md)
+* [网络编程](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/network_programming.md)
+* [并发](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/concurrency.md)
+* [Git](https://github.com/Rosevil1874/CS_Python_Notes/blob/master/180_Q%26A/categories/git.md)
 
 
 ## 其他
